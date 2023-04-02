@@ -1,0 +1,12 @@
+@keyframes marquee {
+  100% {
+    transform: translateX(0);
+  }
+  0% {
+    transform: translateX(calc(-100% + 200vw));
+  }
+}
+
+.animate-marquee {
+  animation: marquee 60s linear infinite;
+}
