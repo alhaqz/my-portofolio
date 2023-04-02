@@ -9,7 +9,7 @@ class Conatact extends Component {
           Contact Me
         </h1>
         <div className="flex">
-          <img className="flex-1 p-2 scale-90" src={mail} />
+          <img className="flex-1 p-2 scale-50" src={mail} />
           <p className="flex-1 p-2 mr-[10vw] my-auto text-white">
             With a strong foundation in front-end and back-end development, I am
             passionate about using technology to create innovative solutions. As

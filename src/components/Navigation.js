@@ -13,7 +13,7 @@ const Navigation = (props) => {
   }, []);
 
   return (
-    <div className="sticky ml-[90vw] w-[10vw] top-0 right-0 z-50">
+    <div className="fixed bg-transparent ml-[90vw] w-[10vw] top-0 right-0 z-50">
       <div className="flex justify-end right-0 p-4 mr-2 bg-transparent">
         <div onClick={navHandler}>
           {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
@@ -33,32 +33,32 @@ const Navigation = (props) => {
           </div>
         </div>
         <ul className={'text-lg p-4'}>
-          <li className="p-4 border-b border-gray-dark font-sans hover:text-[#fff]">
+          <li className="p-4 border-b border-gray-dark font-sans opacity-[60%] hover:opacity-[100%]">
             <Link to="/" onClick={navHandler}>
               Home
             </Link>
           </li>
-          <li className="p-4 border-b border-gray-dark font-sans hover:text-[#fff]">
+          <li className="p-4 border-b border-gray-dark font-sans opacity-[60%] hover:opacity-[100%]">
             <Link to="/experience" onClick={navHandler}>
               Experience
             </Link>
           </li>
-          <li className="p-4 border-b border-gray-dark font-sans hover:text-[#fff]">
+          <li className="p-4 border-b border-gray-dark font-sans opacity-[60%] hover:opacity-[100%]">
             <Link to="/skill" onClick={navHandler}>
               Skill
             </Link>
           </li>
-          <li className="p-4 border-b border-gray-dark font-sans hover:text-[#fff]">
+          <li className="p-4 border-b border-gray-dark font-sans opacity-[60%] hover:opacity-[100%]">
             <Link to="/interest" onClick={navHandler}>
               Interest
             </Link>
           </li>
-          <li className="p-4 border-b border-gray-dark font-sans hover:text-[#fff]">
+          <li className="p-4 border-b border-gray-dark font-sans opacity-[60%] hover:opacity-[100%]">
             <Link to="/about" onClick={navHandler}>
               About Me
             </Link>
           </li>
-          <li className="p-4 border-b border-gray-dark font-sans hover:text-[#fff]">
+          <li className="p-4 border-b border-gray-dark font-sans opacity-[60%] hover:opacity-[100%]">
             <Link to="/contact" onClick={navHandler}>
               Conatct Me
             </Link>

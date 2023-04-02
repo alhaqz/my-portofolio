@@ -1,10 +1,10 @@
 import React, { Component, components } from 'react';
 import karyakala from '../image/karyakala.jpeg';
 import karyakala2 from '../image/karyakala2.jpeg';
-import karyakala3 from '../image/karyakala3.jpeg';
 import psaf from '../image/psaf1.jpeg';
 import psaf2 from '../image/psaf2.jpeg';
-import psaf3 from '../image/psaf3.jpeg';
+import bumper from '../Video/bumper.webm';
+import natal from '../Video/natal.webm';
 
 class Experience extends Component {
   alhaq() {
@@ -52,27 +52,38 @@ class Experience extends Component {
 
           `Handled end-to-end editing including scripting, filming, to post-production.`,
         ],
-        image1: karyakala,
-        image2: karyakala2,
+        image1: bumper,
+        image2: natal,
       },
     ];
     return data;
   }
   card(props) {
     const { name, company, job, date, location, desc, image1, image2 } = props;
+
+    const isImage = image1.split('.').pop() === 'jpeg';
     return (
       <div className="flex border group transition-all duration-500 hover:scale-105 hover:bg-slate-100">
-        <div className="flex-1 flex h-[30vh] w-[50vw] items-center justify-center">
-          <img
-            className="p-1 object-cover w-[22vw] hover:w-[25vw] transition-all duration-500"
-            src={image1}
-          />
-          <img
-            className="p-1 object-cover w-[22vw] hover:w-[25vw] transition-all duration-500"
-            src={image2}
-          />
+        <div className="flex-1 flex h-[30vh] ml-[5vw] w-[40vw] mx-auto items-center justify-center">
+          {isImage ? (
+            <>
+              <img
+                className="p-1 object-cover w-[20vw] hover:w-[22vw] transition-all duration-500"
+                src={image1}
+              />
+              <img
+                className="p-1 object-cover w-[20vw] hover:w-[22vw] transition-all duration-500"
+                src={image2}
+              />
+            </>
+          ) : (
+            <div className="flex">
+              <video className="p-1 w-[20vw] " src={image1} muted autoPlay />
+              <video className="p-1 w-[20vw]" src={image2} muted autoPlay />
+            </div>
+          )}
         </div>
-        <div className="flex-1 p-3  flex font-sans flex-col">
+        <div className="flex-1 p-3 w-[40vw] mt-5 flex font-sans flex-col">
           <h1 className="font-bold text-2xl">{name}</h1>
           <div className="flex flex-row">
             <h2 className="font-semibold mr-2">{company}</h2>
@@ -81,7 +92,7 @@ class Experience extends Component {
           <h3 className="text-black">{date}</h3>
           <h3 className="text-black">{location}</h3>
           <div className="my-2">
-            <ul className="list-disc mr-[5vw] ml-5">
+            <ul className="list-disc mr-[7vw] ml-5">
               {desc.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
